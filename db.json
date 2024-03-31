@@ -1,0 +1,11 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "mail": "skkanakaraju@gmail.com",
+      "password": "123",
+      "created_at": "02/04/2024",
+      "token": "automaticgenerated"
+    }
+  ]
+}

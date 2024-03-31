@@ -11,7 +11,7 @@ function App() {
         <Routes>
           <Route element={<ProtectedRoutes />}>
             <Route element={<Layout />} path="/">
-              <Route element={<Users />} path="/users" />
+              <Route element={<Users />} path="/" />
             </Route>
           </Route>
           <Route element={<Login />} exact path="/login" />

@@ -20,7 +20,7 @@ export const Layout = () => {
                 <li className="nav-item">
                   <a href="#" className="nav-link align-middle px-0">
                     <i className="fs-4 bi-house"></i>{" "}
-                    <span className="ms-1 d-none d-sm-inline">Home</span>
+                    <span className="ms-1 d-none d-sm-inline">Users</span>
                   </a>
                 </li>
                 <li>
@@ -117,19 +117,7 @@ export const Layout = () => {
                         <span className="d-none d-sm-inline">Product</span> 3
                       </a>
                     </li>
-                    <li>
-                      <a href="#" className="nav-link px-0">
-                        {" "}
-                        <span className="d-none d-sm-inline">Product</span> 4
-                      </a>
-                    </li>
                   </ul>
-                </li>
-                <li>
-                  <a href="#" className="nav-link px-0 align-middle">
-                    <i className="fs-4 bi-people"></i>{" "}
-                    <span className="ms-1 d-none d-sm-inline">Customers</span>{" "}
-                  </a>
                 </li>
               </ul>
               <hr />
