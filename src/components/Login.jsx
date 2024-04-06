@@ -9,6 +9,7 @@ export const Login = () => {
      e.preventDefault();
      console.log("Email:" + email)
      console.log("password:" + password)
+     consle.log("janu branch")
   }
   return (
     
