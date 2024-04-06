@@ -4,6 +4,7 @@ import { Layout } from "./components/Layout";
 import { Login } from "./components/Login";
 import { Users } from "./components/Users";
 import { ProtectedRoutes } from "./utils/ProtectedRoutes";
+import { Signup } from "./components/Signup";
 function App() {
   return (
     <div className="App">
@@ -15,6 +16,7 @@ function App() {
             </Route>
           </Route>
           <Route element={<Login />} exact path="/login" />
+          <Route element={<Signup/>} path="/signup"></Route>
         </Routes>
       </Router>
     </div>
