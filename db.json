@@ -1,11 +1,100 @@
 {
-  "users": [
+  "users_credentials": [
     {
       "id": 1,
+      "name": "raju",
       "mail": "skkanakaraju@gmail.com",
+      "phoneNumber": "8008868653",
       "password": "123",
       "created_at": "02/04/2024",
       "token": "automaticgenerated"
+    },
+    {
+      "id": 2,
+      "name": "ramu",
+      "mail": "ramu@gmail.com",
+      "phoneNumber": "8008868653",
+      "password": "123",
+      "created_at": "02/04/2024",
+      "token": "automaticgenerated"
+    }
+  ],
+  "users": [
+    {
+      "userId": 1,
+      "loginId": 1,
+      "name": "raju",
+      "mail": "skkanakaraju@gmail.com",
+      "phoneNumber": "8008868653"
+    },
+    {
+      "id": "2a91",
+      "userId": 2,
+      "loginId": 2,
+      "name": "ramu",
+      "mail": "ramu@gmail.com",
+      "phoneNumber": "8008868653"
+    }
+  ],
+  "bookingRequests": [
+    {
+      "userId": 1,
+      "bookingId": "1",
+      "name": "raju",
+      "email": "raju@gmail.com",
+      "phoneNumber": "8008868653",
+      "location": {
+        "locationId": 1,
+        "locationName": "vizag"
+      },
+      "interpreter": {
+        "interpreterId": 1,
+        "interpreterName": "Divya"
+      },
+      "fromLanguage": "English",
+      "toLanguage": "Hindi",
+      "description": "need to discuss about money earning",
+      "appointment": [
+        {
+          "created_at": "10/04/2024",
+          "fromDate_Time": "Tue Apr 09 2024 08:46:14 GMT+0530 (India Standard Time)",
+          "toDate_Time": "Tue Apr 09 2024 09:46:14 GMT+0530 (India Standard Time)",
+          "appointmentStatus": "pending"
+        }
+      ],
+      "requestStatus": "pending"
+    }
+  ],
+  "locations": [
+    {
+      "locationId": 1,
+      "locationName": "vizag"
+    },
+    {
+      "locationId": 2,
+      "locationName": "NAD"
+    }
+  ],
+  "interpretersList": [
+    {
+      "intepreterId": 1,
+      "interpreterName": "Divya",
+      "fromLanguage": "English",
+      "toLanguage": "Hindi",
+      "locationId": {
+        "locationId": 1,
+        "locationName": "NAD"
+      }
+    },
+    {
+      "intepreterId": 2,
+      "interpreterName": "Naidu",
+      "fromLanguage": "English",
+      "toLanguage": "Telugu",
+      "locationId": {
+        "locationId": 2,
+        "locationName": "vizag"
+      }
     }
   ]
 }
