@@ -17,8 +17,31 @@ export const getUsers = createAsyncThunk("users/getUsers", async () => {
   }
 });
 
+export const signUp = createAsyncThunk("credentials", async (payload) => {
+  // console.log("payload", payload);
+  try {
+    const response = await axios.post(
+      "http://localhost:8000/users_credentials",
+      { ...payload }
+    );
+    const res = response?.data;
+    console.log("response", response);
+    if (response.status == 201) {
+      await axios.post("http://localhost:8000/users", {
+        loginId: res?.id,
+        name: res?.name,
+        email: res?.email,
+        phoneNumber: res?.phoneNumber,
+      });
+    }
+    return res;
+  } catch (error) {
+    throw error;
+  }
+});
+
 export const UserReducer = createSlice({
-  name: "users",
+  name: "credentials",
   initialState,
   extraReducers: (builder) => {
     builder.addCase(getUsers.pending, (state) => {
@@ -26,9 +49,22 @@ export const UserReducer = createSlice({
     });
     builder.addCase(getUsers.fulfilled, (state, action) => {
       state.loading = false;
-      state.users.push(...action.payload);
+      state.users.push(action.payload);
     });
     builder.addCase(getUsers.rejected, (state, action) => {
+      state.loading = false;
+      state.error = action.error.message;
+    });
+
+    //post call
+    builder.addCase(signUp.pending, (state) => {
+      state.loading = true;
+    });
+    builder.addCase(signUp.fulfilled, (state, action) => {
+      state.loading = false;
+      state.users.push(action.payload);
+    });
+    builder.addCase(signUp.rejected, (state, action) => {
       state.loading = false;
       state.error = action.error.message;
     });
