@@ -1,0 +1,17 @@
+.layout {
+  /* background-color: var(--indigo-color); */
+}
+.logo {
+  font-size: 4rem !important;
+  color: black !important;
+}
+.nav-active-list {
+  background-color: var(--indigo-color);
+  color: white !important;
+}
+.nav-list:hover {
+  background-color: var(--blue-hover);
+}
+.nav-list .nav-link:hover {
+  color: var(--indigo-color) !important;
+}

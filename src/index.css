@@ -1,13 +1,27 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 1.2vw; /* Responsive font size based on viewport width */
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+  font-size: 1em; /* You can adjust the font size of code separately */
+}
+
+:root {
+  /* Define your color variables here */
+  --indigo-color: #4338ca;
+  --blue-hover: #eef2ff;
+  --secondary-color: #6c757d; /* Example secondary color (gray) */
+  --success-color: #28a745; /* Example success color (green) */
+  --danger-color: #dc3545; /* Example danger color (red) */
+  --warning-color: #ffc107;
+  --info-color: #17a2b8;
+  /* --text-color:  */
 }
