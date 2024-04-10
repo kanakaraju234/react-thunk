@@ -1,9 +1,10 @@
-import { Link, Outlet, useLocation } from "react-router-dom";
+import { Link, Outlet, useLocation, useNavigate } from "react-router-dom";
 import "../components/Layout.css";
 
 export const Layout = () => {
   const location = useLocation();
-  console.log("Layout", location.pathname);
+  const navigate = useNavigate();
+
   return (
     <div>
       <div className="container-fluid">
@@ -47,10 +48,14 @@ export const Layout = () => {
                 </li>
               </ul>
               <hr />
-              <div className="dropdown pb-4">
+              <div className="pb-4">
                 <a
                   href="#"
-                  className="d-flex align-items-center text-white text-decoration-none"
+                  className="d-flex align-items-center text-black text-decoration-none"
+                  onClick={() => {
+                    localStorage.removeItem("token");
+                    navigate("/login");
+                  }}
                 >
                   <span className="d-none d-sm-inline mx-1">Logout</span>
                 </a>

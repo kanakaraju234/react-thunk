@@ -5,5 +5,6 @@ export const ProtectedRoutes = () => {
   let auth = { token: "tokengenerated" };
   const { token } = useAuth();
   console.log("token", token);
-  return token.length > 0 ? <Outlet /> : <Navigate to="/login" />;
+  const isTokenExist = localStorage.getItem("token");
+  return isTokenExist?.length > 0 ? <Outlet /> : <Navigate to="/login" />;
 };

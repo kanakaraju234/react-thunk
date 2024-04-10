@@ -16,18 +16,24 @@ export const Login = () => {
   );
   // Use useEffect to set the token when credentials change
   useEffect(() => {
-    console.log("Credentials changed", credentials);
     if (credentials?.hasOwnProperty("token")) {
-      console.log("inside");
-      setToken(credentials.token);
-      navigate("/");
+      localStorage.setItem("token", credentials.token);
+      setToken(credentials.token); // Update token in auth context
+      navigate("/"); // Redirect to home page
+    } else {
+      const isTokenExist = localStorage.getItem("token");
+      if (isTokenExist) {
+        // If token exists, navigate away from login page
+        navigate("/");
+      }
     }
-  }, [credentials, setToken]);
+  }, [credentials, setToken, navigate]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(getLogin({ email, password }));
   };
-  if (token?.length > 0) navigate("/");
+
   return (
     <div className="d-flex bg-white align-items-center justify-content-center   container rounded 0">
       <div className="p-3 rounded  w-30  ">
