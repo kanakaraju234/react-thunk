@@ -49,7 +49,8 @@ export const UserReducer = createSlice({
     });
     builder.addCase(getUsers.fulfilled, (state, action) => {
       state.loading = false;
-      state.users.push(action.payload);
+      console.log("action", action.payload, "state", state);
+      state.users.push(...action.payload);
     });
     builder.addCase(getUsers.rejected, (state, action) => {
       state.loading = false;
@@ -62,7 +63,7 @@ export const UserReducer = createSlice({
     });
     builder.addCase(signUp.fulfilled, (state, action) => {
       state.loading = false;
-      state.users.push(action.payload);
+      // state.users.push(action.payload);
     });
     builder.addCase(signUp.rejected, (state, action) => {
       state.loading = false;

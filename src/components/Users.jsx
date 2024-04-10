@@ -1,5 +1,6 @@
-import { useEffect } from "react";
+import { useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Card, DataTable } from "../core";
 import { getUsers } from "../redux/Reducers/UserReducer";
 
 export const Users = () => {
@@ -13,17 +14,26 @@ export const Users = () => {
     },
     {
       id: 2,
-      name: "Email",
+      name: "Name",
     },
     {
       id: 3,
-      name: "Created At",
+      name: "Email",
+    },
+    {
+      id: 4,
+      name: "Phone Number",
     },
   ];
+  // Memoize the dispatch function using useCallback
+  const dispatchGetUsers = useCallback(() => {
+    dispatch(getUsers());
+  }, [dispatch]); // Ensure dispatch is the only dependency
 
   useEffect(() => {
-    dispatch(getUsers());
-  }, []);
+    // Dispatch getUsers action only when the component mounts
+    dispatchGetUsers();
+  }, [dispatchGetUsers]); // Pass dispatchGetUsers as dependency
 
   if (loading) <div>Loading...</div>;
   if (error.length > 0) <div>{error}</div>;
@@ -32,29 +42,19 @@ export const Users = () => {
     return (
       <tr key={user.id}>
         <td>{user.id}</td>
-        <td>{user.mail}</td>
-        <td>{user.created_at}</td>
+        <td>{user.name}</td>
+        <td>{user.email}</td>
+        <td>{user.phoneNumber}</td>
       </tr>
     );
   });
 
   return (
     <div>
-      <div className="shadow-sm p-3 mb-5 bg-white rounded border border-2 fs-2">
-        Users List
-      </div>
-      <div>
-        <table className="table table-hover">
-          <thead>
-            <tr>
-              {tableHeaders?.map((item) => (
-                <th key={item.id}>{item.name}</th>
-              ))}
-            </tr>
-          </thead>
-          <tbody>{renderData}</tbody>
-        </table>
-      </div>
+      <Card className="fs-2">Users List</Card>
+      <Card>
+        <DataTable tableHeaders={tableHeaders} renderData={renderData} />
+      </Card>
     </div>
   );
 };

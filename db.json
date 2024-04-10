@@ -26,6 +26,33 @@
       "password": "123",
       "created_at": "2024-04-09T06:49:36.449Z",
       "token": "newtoken"
+    },
+    {
+      "id": "407a",
+      "name": "priya",
+      "mail": "priya@gmail.com",
+      "phoneNumber": "8008868653",
+      "password": "123",
+      "created_at": "09/04/2024",
+      "token": "automaticgenerated"
+    },
+    {
+      "id": "c80e",
+      "name": "divya sai",
+      "phoneNumber": "8008868653",
+      "email": "skkanakaraju@gmail.com",
+      "password": "12345",
+      "created_at": "2024-04-09T14:38:13.730Z",
+      "token": "newtoken"
+    },
+    {
+      "id": "720f",
+      "name": "priya",
+      "mail": "priya@gmail.com",
+      "phoneNumber": "8008868653",
+      "password": "123",
+      "created_at": "09/04/2024",
+      "token": "automaticgenerated"
     }
   ],
   "users": [
@@ -33,7 +60,7 @@
       "id": 1,
       "loginId": 1,
       "name": "raju",
-      "mail": "skkanakaraju@gmail.com",
+      "email": "skkanakaraju@gmail.com",
       "phoneNumber": "8008868653"
     },
     {
@@ -41,7 +68,7 @@
       "userId": 2,
       "loginId": 2,
       "name": "ramu",
-      "mail": "ramu@gmail.com",
+      "email": "ramu@gmail.com",
       "phoneNumber": "8008868653"
     },
     {
@@ -50,6 +77,13 @@
       "name": "jaanu",
       "email": "skkanakaraju@gmail.com",
       "phoneNumber": "12345678"
+    },
+    {
+      "id": "8486",
+      "loginId": "c80e",
+      "name": "divya sai",
+      "email": "skkanakaraju@gmail.com",
+      "phoneNumber": "8008868653"
     }
   ],
   "bookingRequests": [
