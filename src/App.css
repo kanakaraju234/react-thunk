@@ -7,3 +7,28 @@
 .form-check-input{
   font-size: 1.2rem;
 }
+
+      /* nav-styles */
+
+      
+.nav   a:hover{
+  
+  color: white;
+}
+
+button span:hover{
+  color: white;
+}
+
+  /* register-border */
+
+  .register{
+    border: 1px solid black;
+    width: 500px;
+  
+  }
+
+  .signup{
+    border: 1px solid black;
+    width:500px;
+  }

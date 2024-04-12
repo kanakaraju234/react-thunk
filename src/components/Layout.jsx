@@ -46,6 +46,16 @@ export const Layout = () => {
                     <span className="ms-2 d-none d-sm-inline">Bookings</span>
                   </Link>
                 </li>
+
+                <li className="nav-list nav-item w-100 px-1 mb-2">
+                  <i className="bi bi-grid me-2 fs-4"></i>
+                  <span className="ms-1 d-none d-sm-inline">Dashboard</span>
+                </li>
+
+                <li className="nav-list nav-item w-100 px-1 mb-2 ">
+                  <i className="bi bi-book-fill me-2 fs-4 "></i>
+                  <span className="ms-1 d-none d-sm-inline">Bookings</span>
+                </li>
               </ul>
               <hr />
               <div className="pb-4">

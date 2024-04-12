@@ -35,7 +35,7 @@ export const Login = () => {
   };
 
   return (
-    <div className="d-flex bg-white align-items-center justify-content-center   container rounded 0">
+    <div className="d-flex bg-white align-items-center justify-content-center  container rounded 0">
       <div className="p-3 rounded  w-30  ">
         <form onSubmit={(e) => handleSubmit(e)}>
           <div className="form-outline mb-2">
@@ -88,5 +88,5 @@ export const Login = () => {
         </form>
       </div>
     </div>
-  );
+    );
 };
