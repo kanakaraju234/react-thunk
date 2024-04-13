@@ -3,8 +3,8 @@ import axios from "axios";
 
 const initialState = {
   loading: false,
-  error: "",
-  credentials: {},
+  error: "", 
+ credentials: {},
 };
 
 // Define the async thunk action creator
