@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-
+import { useDispatch } from 'react-redux';
+import { BookingRequest } from '../redux/Reducers/BookingReducer';
  export function Appointment() {
   const [formData, setFormData] = useState({
     name: '',
@@ -12,13 +13,18 @@ import React, { useState } from 'react';
     appointmentDate: ''
   });
 
+  const dispatch = useDispatch()
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
+    console.log("formData" , formData)
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(formData);
+    dispatch(BookingRequest(formData))
+     
   };
 
   return (
@@ -42,18 +48,18 @@ import React, { useState } from 'react';
           <label htmlFor="location">Location:</label>
           <select className="form-control" name="location" value={formData.location} onChange={handleChange} required>
             <option value="">Select Location</option>
-            <option value="city1">Hyd</option>
-            <option value="city2">Banglore</option>
-            <option value="city3">Chennai</option>
+            <option value="Hyd">Hyd</option>
+            <option value="Banglore">Banglore</option>
+            <option value="Chennai">Chennai</option>
           </select>
         </div>
         <div className="form-group">
           <label htmlFor="interpreter">Interpreter:</label>
           <select className="form-control" name="interpreter" value={formData.interpreter} onChange={handleChange} required>
             <option value="">Select Interpreter</option>
-            <option value="interpreter1">appointment 1</option>
-            <option value="interpreter2">appointment 2</option>
-            <option value="interpreter3">appointment 3</option>
+            <option value="appointment 1">appointment 1</option>
+            <option value="appointment 2">appointment 2</option>
+            <option value="appointment 3">appointment 3</option>
           </select>
         </div>
         <div className="form-group">
@@ -64,9 +70,9 @@ import React, { useState } from 'react';
           <label htmlFor="language">Language:</label>
           <select className="form-control" name="language" value={formData.language} onChange={handleChange} required>
             <option value="">Select Language</option>
-            <option value="language1">English</option>
-            <option value="language2">Telugu</option>
-            <option value="language3">Hindi</option>
+            <option value="English">English</option>
+            <option value="Telugu">Telugu</option>
+            <option value="Hindi">Hindi</option>
           </select>
         </div>
         <div className="form-group">
