@@ -7,7 +7,7 @@ trigger:
 - main
 variables:
   uiSource: 'react-thunk'
-  uiBuild: '$(uiSource)/build'
+  uiBuild: 'build'
   
 pool:
   vmImage: ubuntu-latest
@@ -19,14 +19,10 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
-    echo "uiSource: $(uiSource)"
-    ls $(uiSource)
-    pushd $(uiSource)
     ls
     npm install
     ls
     npm run build
-    popd
   displayName: 'npm install and build'
 
 - task: ArchiveFiles@2
