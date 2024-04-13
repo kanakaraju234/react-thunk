@@ -1,4 +1,4 @@
-
+import "../core/Pagination.css"
 export const Pagination = (props) => {
   
   const totalPageCount = Math.ceil(props.total / props.pageLimit);
@@ -25,19 +25,19 @@ export const Pagination = (props) => {
   console.log(pageNumbers,"PageNumbers")
 
   return (
-    <div className="row mt-5">
-      <div className="col-md-6">
+    <div className="row mt-5 justify-content-center">
+      <div className="col-auto previousBtn">
         <button onClick={handlePreviousPage}>Previous</button>
       </div>
-      <div className="col-md">
+      <div className="col-auto page-number">
       
-      <label>Page number:</label>
+      <label>Page No:</label>
       <select value={props.selectedPage} onChange={handlePageChange}>
         {pageNumbers}
       </select>
 
       </div>
-      <div className="col-md">
+      <div className="col-auto nextBtn">
         <button onClick={handleNextPage}>Next</button>
       </div>
     </div>

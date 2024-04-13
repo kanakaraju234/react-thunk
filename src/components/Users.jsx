@@ -4,11 +4,10 @@ import { Card, DataTable } from "../core";
 import { getUsers } from "../redux/Reducers/UserReducer";
 import { Pagination } from "../core/Pagination";
 
+
 export const Users = () => {
   const { loading, error, users } = useSelector((state) => state.userReducer);
   const dispatch = useDispatch();
-  console.log("users----", users);
-
   
 
   const [limit, setLimit] = useState(5);
@@ -69,8 +68,7 @@ export const Users = () => {
     <div>
       <Card className="fs-2">Users List</Card>
       <Card>
-        <DataTable tableHeaders={tableHeaders} renderData={renderData} />
-        <div>
+      <div className="mb-3">
         <p>Page limit:</p>
           <select value={limit} onChange={handleChange}>
             
@@ -81,6 +79,8 @@ export const Users = () => {
           </select>
           
         </div>
+        <DataTable tableHeaders={tableHeaders} renderData={renderData} />
+        
         <div>
           
           <Pagination total={users?.items} pageLimit={limit} selectedPage={selectedPage} setSelectedPage={setSelectedPage} />
