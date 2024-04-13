@@ -7,8 +7,6 @@ import { Signup } from "./components/Signup";
 import { Users } from "./components/Users";
 import { ProtectedRoutes } from "./utils/ProtectedRoutes";
 import Dashboard from "./bookings/Dashboard";
-import Register from "./components/Register";
-import SignupPage from "./components/SignupPage";
 
 
 function App() {
@@ -21,8 +19,6 @@ function App() {
               <Route element={<Users />} path="/" />
               <Route element={<Bookings />} path="/bookings" />
               <Route element={<Dashboard/>} path="/dashboard"></Route>
-              <Route element={<Register/>} path="/register"></Route>
-              <Route element={<SignupPage/>} path="/signupForm"></Route>
             </Route>
           </Route>
           <Route element={<Login />} exact path="/login" />

@@ -1,4 +1,4 @@
-import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
 import axios from "axios";
 
 const initialState = {
@@ -18,7 +18,7 @@ export const getUsers = createAsyncThunk("users/getUsers", async () => {
 });
 
 export const signUp = createAsyncThunk("credentials", async (payload) => {
-  // console.log("payload", payload);
+   console.log("payload", payload);
   try {
     const response = await axios.post(
       "http://localhost:8000/users_credentials",
