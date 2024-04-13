@@ -6,20 +6,29 @@
 trigger:
 - main
 
+variables:
+  uiSource: 'react-thunk'
+  uiBuild: '$(uiSource)/build'
+
 pool:
   vmImage: ubuntu-latest
 
 steps:
-- task: CopyFiles@2
-  inputs:
-    Contents: 'build/**'
-    TargetFolder: $(Build.ArtifactStagingDirectory)
-
 - script: |
+    pushd $(uiSource)
     npm install
     npm run build
   displayName: 'npm install and build'
 
+
+- task: ArchiveFiles@2
+  inputs:
+    rootFolderOrFile: '$(uiBuild)'
+    includeRootFolder: false
+    archiveType: 'zip'
+    archiveFile: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+    replaceExistingArchive: true
+    
 - task: PublishBuildArtifacts@1
   inputs:
     PathtoPublish: '$(Build.ArtifactStagingDirectory)'
