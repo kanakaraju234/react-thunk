@@ -1,6 +1,7 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import "./App.css";
 import { Bookings } from "./bookings/booking";
+import { NotFound } from "./components/404";
 import { Layout } from "./components/Layout";
 import { Login } from "./components/Login";
 import { Signup } from "./components/Signup";
@@ -23,6 +24,7 @@ function App() {
           </Route>
           <Route element={<Login />} exact path="/login" />
           <Route element={<Signup />} path="/signup"></Route>
+          <Route element={<NotFound />} path="/*"></Route>
         </Routes>
       </Router>
     </div>
