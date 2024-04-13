@@ -1,12 +1,16 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { getLogin } from "../redux/Reducers/LoginReducer";
 import { useAuth } from "../utils/authContext/AuthContext";
 
 export const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const [emailError , setEmailError] = useState("")
+  const[passwordError , setPasswordError] = useState("")
+
   const dispatch = useDispatch();
   const { token, setToken } = useAuth();
   const navigate = useNavigate();
@@ -32,6 +36,25 @@ export const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(getLogin({ email, password }));
+
+    // form validation
+    if(!email.trim()){
+      setEmailError("*Please enter your email")
+    }
+
+    if(!/\S+@\S+\.\S+/.test(email)){
+        setEmailError("*please enter a valid email")
+    }
+
+    if(!password.trim()){
+       setPasswordError("please enter your password")
+    }
+    if(password.length < 6){
+      setPasswordError("*please enter at least 6 characters")
+    }
+    alert("please enter user Credentials")
+
+     
   };
 
   return (
@@ -45,9 +68,11 @@ export const Login = () => {
             <input
               type="email"
               autoComplete="off"
-              className="form-control rounded 0 "
+              className="form-control rounded 0 mb-1 "
               onChange={(e) => setEmail(e.target.value)}
             />
+
+            {emailError && <p className="text-danger">{emailError}</p>}
           </div>
           <div>
             <label htmlFor="password">
@@ -55,9 +80,10 @@ export const Login = () => {
             </label>
             <input
               type="password"
-              className="form-control rounded 0 mb-3"
+              className="form-control rounded 0 mb-1"
               onChange={(e) => setPassword(e.target.value)}
             />
+          {passwordError && <p className="text-danger ">{passwordError}</p>}
           </div>
           <div className="form-check mb-4">
             <input
@@ -81,7 +107,7 @@ export const Login = () => {
 
           <div className="text-center">
             <p>
-              Not a member?<a href="#!">Register</a>
+              Not a member?<Link to="/signup">Register</Link>
             </p>
             <p>or sign up with:</p>
           </div>
