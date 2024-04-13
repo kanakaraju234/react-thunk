@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { getLogin } from "../redux/Reducers/LoginReducer";
 import { useAuth } from "../utils/authContext/AuthContext";
 
@@ -35,7 +35,7 @@ export const Login = () => {
   };
 
   return (
-    <div className="d-flex bg-white align-items-center justify-content-center   container rounded 0">
+    <div className="d-flex bg-white align-items-center justify-content-center  container rounded 0">
       <div className="p-3 rounded  w-30  ">
         <form onSubmit={(e) => handleSubmit(e)}>
           <div className="form-outline mb-2">
@@ -81,12 +81,12 @@ export const Login = () => {
 
           <div className="text-center">
             <p>
-              Not a member?<a href="#!">Register</a>
+              Not a member?<Link to="/signup">Register</Link>
             </p>
             <p>or sign up with:</p>
           </div>
         </form>
       </div>
     </div>
-  );
+    );
 };

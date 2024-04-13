@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { signUp } from "../redux/Reducers/UserReducer";
+import { useNavigate } from "react-router-dom";
 
 export const Signup = () => {
   const [user, setUser] = useState({
@@ -12,11 +13,21 @@ export const Signup = () => {
   });
   const dispatch = useDispatch();
   console.log("user", user);
+  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const { confirmPassword, ...rest } = user;
     dispatch(signUp({ ...rest, created_at: new Date(), token: "newtoken" }));
+       setUser({
+        name: "",
+        phoneNumber: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
+      });
+       navigate("/login")
+    
   };
 
   const handleChange = (e) => {
@@ -24,6 +35,7 @@ export const Signup = () => {
       ...user,
       [e.target.name]: e.target.value,
     });
+    console.log("onchange" , user)
   };
 
   return (

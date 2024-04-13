@@ -6,6 +6,8 @@ import { Login } from "./components/Login";
 import { Signup } from "./components/Signup";
 import { Users } from "./components/Users";
 import { ProtectedRoutes } from "./utils/ProtectedRoutes";
+import Dashboard from "./bookings/Dashboard";
+
 
 function App() {
   return (
@@ -16,6 +18,7 @@ function App() {
             <Route element={<Layout />} path="/">
               <Route element={<Users />} path="/" />
               <Route element={<Bookings />} path="/bookings" />
+              <Route element={<Dashboard/>} path="/dashboard"></Route>
             </Route>
           </Route>
           <Route element={<Login />} exact path="/login" />
