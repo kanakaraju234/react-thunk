@@ -12,7 +12,7 @@ pool:
 steps:
 - task: CopyFiles@2
   inputs:
-    Contents: 'react-thunk/build/**'
+    Contents: 'build/**'
     TargetFolder: $(Build.ArtifactStagingDirectory)
 
 - script: |
