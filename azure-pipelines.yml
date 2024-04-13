@@ -19,6 +19,8 @@ steps:
   displayName: 'Install Node.js'
 
 - script: |
+    echo "uiSource: $(uiSource)"
+    ls $(uiSource)
     pushd $(uiSource)
     ls
     npm install
