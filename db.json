@@ -216,6 +216,20 @@
       "fromLanguage": "English",
       "toLanguage": "Hindi",
       "description": "need to discuss about money earning",
+ "Language" : [
+       {
+        "id":1,
+        "language":"English"
+       } ,
+       {
+        "id":2,
+        "language":"Telugu"
+       },
+       {
+        "id":3,
+        "language":"Hindi"
+       }       
+      ],
       "appointment": [
         {
           "created_at": "10/04/2024",
