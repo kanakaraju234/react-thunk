@@ -13,6 +13,7 @@ const BookinRequest = () => {
     <button className='bi bi-plus-circle float-end  mt-5  p-2 text-light rounded border border-0'
      style={{backgroundColor:'blue',}}>&nbsp;Create Master Booking</button>
     </div>
+  
     </div>
 {/* second-one */}
 <div className='m-2 border-0 rounded bg-light overflow-hidden' style={{height:'100vh'}}>

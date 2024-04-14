@@ -48,14 +48,14 @@ if (!user.email.trim()) {
 if (Object.keys(validationErrors).length === 0) {
   const { confirmPassword, ...rest } = user;
   dispatch(signUp({ ...rest, created_at: new Date(), token: "newtoken" }));
+  alert('Form submitted successfully!');
   setUser({
     name: "",
     phoneNumber: "",
     email: "",
     password: "",
-    confirmPassword: "",
-  });
-  alert('Form submitted successfully!');
+    confirmPassword: "", 
+  })
   navigate("/login");
 } else {
   setErrors(validationErrors);
