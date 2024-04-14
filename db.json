@@ -89,6 +89,33 @@
       "password": "santhu@123",
       "created_at": "2024-04-13T08:45:14.573Z",
       "token": "newtoken"
+    },
+    {
+      "id": "ede2",
+      "name": "janyyy",
+      "phoneNumber": "7603842420",
+      "email": "gorlejanak0@gmail.com",
+      "password": "123123",
+      "created_at": "2024-04-14T06:24:55.364Z",
+      "token": "newtoken"
+    },
+    {
+      "id": "30de",
+      "name": "john",
+      "phoneNumber": "7603842420",
+      "email": "john_nit@gmail.com",
+      "password": "000000",
+      "created_at": "2024-04-14T06:28:20.676Z",
+      "token": "newtoken"
+    },
+    {
+      "id": "ff7e",
+      "name": "john",
+      "phoneNumber": "7603842420",
+      "email": "gorlejanak0@gmail.com",
+      "password": "999999",
+      "created_at": "2024-04-14T06:30:18.101Z",
+      "token": "newtoken"
     }
   ],
   "users": [
@@ -148,6 +175,27 @@
       "name": "VECHALAPU SANTHOSH",
       "email": "santhurock499@gmail.com",
       "phoneNumber": "09177072241"
+    },
+    {
+      "id": "c70e",
+      "loginId": "ede2",
+      "name": "janyyy",
+      "email": "gorlejanak0@gmail.com",
+      "phoneNumber": "7603842420"
+    },
+    {
+      "id": "ecb9",
+      "loginId": "30de",
+      "name": "john",
+      "email": "john_nit@gmail.com",
+      "phoneNumber": "7603842420"
+    },
+    {
+      "id": "f941",
+      "loginId": "ff7e",
+      "name": "john",
+      "email": "gorlejanak0@gmail.com",
+      "phoneNumber": "7603842420"
     }
   ],
   "bookingRequests": [

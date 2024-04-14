@@ -1,5 +1,16 @@
 .layout {
-  /* background-color: var(--indigo-color); */
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 250px;
+  background-color: #fff; 
+  overflow-y: auto;  
+}
+
+.col {
+  margin-left: 250px; 
+  overflow-y: auto;
 }
 .logo {
   font-size: 4rem !important;
