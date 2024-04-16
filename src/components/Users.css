@@ -1,0 +1,16 @@
+.search{
+    margin-top: 40px;
+}
+.searchIcon{
+    height: 70%;
+    
+}
+.searchInput{
+    height: 70%;
+}
+
+.pageLimit{
+    margin-bottom: 20px;
+    margin-left: 20px;
+    width: 15%;
+}

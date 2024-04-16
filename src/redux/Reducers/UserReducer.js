@@ -4,20 +4,24 @@ import axios from "axios";
 const initialState = {
   loading: false,
   error: "",
-  users: [],
+  users: {},
 };
 
 // Define the async thunk action creator
-export const getUsers = createAsyncThunk("users/getUsers", async () => {
-  try {
-    const response = await axios.get(
-      "https://translation-api-v1.onrender.com/users"
-    );
-    return response.data;
-  } catch (error) {
-    throw error;
+export const getUsers = createAsyncThunk(
+  "users/getUsers",
+  async ({ limit, selectedPage }) => {
+    console.log(limit, selectedPage, "limit and selectedPage");
+    try {
+      const response = await axios.get(
+        "https://translation-api-v1.onrender.com/users"
+      );
+      return response.data;
+    } catch (error) {
+      throw error;
+    }
   }
-});
+);
 
 export const signUp = createAsyncThunk("signup", async (payload) => {
   console.log("payload", payload);
