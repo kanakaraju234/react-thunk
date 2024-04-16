@@ -56,7 +56,7 @@ export const UserReducer = createSlice({
     builder.addCase(getUsers.fulfilled, (state, action) => {
       state.loading = false;
       console.log("action", action.payload, "state", state);
-      state.users.push(...action.payload?.data);
+      state.users = { data: action.payload?.data };
     });
     builder.addCase(getUsers.rejected, (state, action) => {
       state.loading = false;
