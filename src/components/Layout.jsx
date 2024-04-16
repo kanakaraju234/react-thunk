@@ -7,10 +7,10 @@ export const Layout = () => {
 
   return (
     <div>
-      <div className="container-fluid">
+      <div className="container-fluid ">
         <div className="row flex-nowrap">
           <div className="layout border-end col-auto col-md-3 col-xl-2 px-sm-2 px-0">
-            <div className="d-flex flex-column align-items-sm-start align-items-center px-3 pt-2 text-black min-vh-100">
+            <div className="d-flex flex-column align-items-sm-start align-items-center position-fixed px-3 pt-2 text-black min-vh-100">
               <a
                 href="/"
                 className="w-100 text-start  pb-2 mb-md-0 me-md-auto text-white text-decoration-none"
