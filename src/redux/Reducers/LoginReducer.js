@@ -12,11 +12,12 @@ export const getLogin = createAsyncThunk("login", async (payload) => {
   console.log("payload: ", payload);
   try {
     const response = await axios.get(
-      `http://localhost:8000/users_credentials?mail=${payload.email}`
+      `https://translation-api-v1.onrender.com/users_credentials?mail=${payload.email}`
     );
-    if (response.data.length > 0) {
-      const { password } = response.data[0];
-      if (payload.password === password) {
+    if (response?.data?.status === 200) {
+      console.log("response: ", response);
+      const { password } = response?.data?.data;
+      if (payload?.password === password) {
         return response.data;
       } else {
         throw Error({ error: "you entered wrong credentials", status: 401 });
@@ -37,7 +38,7 @@ export const LoginReducer = createSlice({
     builder.addCase(getLogin.fulfilled, (state, action) => {
       state.loading = false;
       console.log("action", action.payload, "state", state);
-      state.credentials = { ...state.credentials, ...action.payload[0] };
+      state.credentials = action.payload.data;
     });
     builder.addCase(getLogin.rejected, (state, action) => {
       state.loading = false;

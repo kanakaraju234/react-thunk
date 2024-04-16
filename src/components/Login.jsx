@@ -11,11 +11,13 @@ export const Login = () => {
   const { token, setToken } = useAuth();
   const navigate = useNavigate();
 
-  const { loading, credentials, error } = useSelector(
-    (state) => state.LoginReducer
-  );
+  const { loading, credentials, error } = useSelector((state) => {
+    console.log("rrr", state);
+    return state.LoginReducer;
+  });
   // Use useEffect to set the token when credentials change
   useEffect(() => {
+    console.log("credentials change", credentials);
     if (credentials?.hasOwnProperty("token")) {
       localStorage.setItem("token", credentials.token);
       setToken(credentials.token); // Update token in auth context
@@ -88,5 +90,5 @@ export const Login = () => {
         </form>
       </div>
     </div>
-    );
+  );
 };

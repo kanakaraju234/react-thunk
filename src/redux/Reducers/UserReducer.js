@@ -1,4 +1,4 @@
-import {createAsyncThunk, createSlice} from "@reduxjs/toolkit";
+import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const initialState = {
@@ -10,15 +10,17 @@ const initialState = {
 // Define the async thunk action creator
 export const getUsers = createAsyncThunk("users/getUsers", async () => {
   try {
-    const response = await axios.get("http://localhost:8000/users");
+    const response = await axios.get(
+      "https://translation-api-v1.onrender.com/users"
+    );
     return response.data;
   } catch (error) {
     throw error;
   }
 });
 
-export const signUp = createAsyncThunk("credentials", async (payload) => {
-   console.log("payload", payload);
+export const signUp = createAsyncThunk("signup", async (payload) => {
+  console.log("payload", payload);
   try {
     const response = await axios.post(
       "http://localhost:8000/users_credentials",
@@ -41,7 +43,7 @@ export const signUp = createAsyncThunk("credentials", async (payload) => {
 });
 
 export const UserReducer = createSlice({
-  name: "credentials",
+  name: "users",
   initialState,
   extraReducers: (builder) => {
     builder.addCase(getUsers.pending, (state) => {
@@ -50,7 +52,7 @@ export const UserReducer = createSlice({
     builder.addCase(getUsers.fulfilled, (state, action) => {
       state.loading = false;
       console.log("action", action.payload, "state", state);
-      state.users.push(...action.payload);
+      state.users.push(...action.payload?.data);
     });
     builder.addCase(getUsers.rejected, (state, action) => {
       state.loading = false;
