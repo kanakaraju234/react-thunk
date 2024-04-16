@@ -4,13 +4,14 @@ import axios from "axios";
 const initialState = {
   loading: false,
   error: "",
-  users: [],
+  users: {},
 };
 
 // Define the async thunk action creator
-export const getUsers = createAsyncThunk("users/getUsers", async () => {
+export const getUsers = createAsyncThunk("users/getUsers", async ({limit ,selectedPage}) => {
+  console.log(limit, selectedPage, "limit and selectedPage");
   try {
-    const response = await axios.get("http://localhost:8000/users");
+    const response = await axios.get(`http://localhost:8000/users?_page=${selectedPage}&_per_page=${limit}`);
     return response.data;
   } catch (error) {
     throw error;
@@ -18,7 +19,6 @@ export const getUsers = createAsyncThunk("users/getUsers", async () => {
 });
 
 export const signUp = createAsyncThunk("credentials", async (payload) => {
-   console.log("payload", payload);
   try {
     const response = await axios.post(
       "http://localhost:8000/users_credentials",
@@ -50,7 +50,7 @@ export const UserReducer = createSlice({
     builder.addCase(getUsers.fulfilled, (state, action) => {
       state.loading = false;
       console.log("action", action.payload, "state", state);
-      state.users.push(...action.payload);
+      state.users={...action.payload};
     });
     builder.addCase(getUsers.rejected, (state, action) => {
       state.loading = false;
