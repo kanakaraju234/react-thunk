@@ -66,7 +66,10 @@ export const Users = () => {
   
   return (
     <div>
-      <Card className="fs-2 text-danger">Users List</Card>
+      <Card className="fs-2 text-success">
+        Users List
+        <h6 className="text-danger mt-2">Welcome</h6>
+      </Card>
       <Card>
         <div className="d-flex">
         <div className=" input-group search">
