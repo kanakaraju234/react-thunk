@@ -68,7 +68,6 @@ export const Users = () => {
     <div>
       <Card className="fs-2 text-success">
         Users List-123
-        <h6 className="text-primary mt-2">Welcome-Raju</h6>
       </Card>
       <Card>
         <div className="d-flex">
