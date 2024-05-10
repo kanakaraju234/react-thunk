@@ -85,7 +85,7 @@ export const Login = () => {
             <p>
               Not a member?<Link to="/signup">Register</Link>
             </p>
-            <p>or sign up with:</p>
+            <p>or sign up with</p>
           </div>
         </form>
       </div>
